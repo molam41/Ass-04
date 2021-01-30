@@ -30,5 +30,13 @@ function notification(){
 	const vat = document.getElementById("vat").innerText;
 	const total = document.getElementById("total").innerText;
 
-	document.getElementById("modal-content").innerText = "Dear sir, you are about to buy " + firstClassTicket + " First Class Ticket & " + econoClassTicket + " Economic Class Ticket. Total Price is $" + total + " (Ticket price $" + subtotal + ", vat $" + vat + '). Plz, click "Ok" to confirm or "Edit" to change.';
+	const totalTicket = parseInt(firstClassTicket) + parseInt(econoClassTicket);
+
+	if (totalTicket) {
+		document.getElementById("modal-content").innerText = "Dear sir, you are about to buy " + firstClassTicket + " First Class Ticket & " + econoClassTicket + " Economic Class Ticket. Total Price is $" + total + " (Ticket price $" + subtotal + ", vat $" + vat + '). Plz, click "Ok" to confirm or "Edit" to make change.';
+	} else {
+		document.getElementById("modal-content").innerText = "To go next step at least 1 (one) ticket must be added."
+	}
+
+
 }
